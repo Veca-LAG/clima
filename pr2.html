@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sección Emergente</title>
+  <style>
+    /* Estilos básicos */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    /* Botón */
+    .toggle-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    /* Contenedor de la sección emergente */
+    .emergent-container {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    /* Sección emergente */
+    .emergent-section {
+      opacity: 0; /* Ocultar visualmente */
+      transform: scaleY(0); /* Ocultar mediante escala */
+      transform-origin: top;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Mostrar sección emergente */
+    .emergent-section.visible {
+      opacity: 1; /* Mostrar */
+      transform: scaleY(1); /* Escalar a tamaño normal */
+    }
+  </style>
+</head>
+<body>
+  <!-- Botón para mostrar/ocultar -->
+  <button class="toggle-btn">Mostrar Sección</button>
+
+  <!-- Contenedor para mantener el botón estático -->
+  <div class="emergent-container">
+    <!-- Sección emergente -->
+    <div class="emergent-section" id="emergentSection">
+      <h2>¡Hola!</h2>
+      <p>Esta es una sección emergente que puedes mostrar o esconder.</p>
+    </div>
+  </div>
+
+  <script>
+    // Seleccionar elementos
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const emergentSection = document.getElementById('emergentSection');
+
+    // Alternar la visibilidad de la sección
+    toggleBtn.addEventListener('click', () => {
+      emergentSection.classList.toggle('visible');
+      toggleBtn.textContent = emergentSection.classList.contains('visible')
+        ? 'Ocultar Sección'
+        : 'Mostrar Sección';
+    });
+  </script>
+</body>
+</html>
