@@ -9,8 +9,8 @@
 <body>
     <div class="card">
         <div class="search-bar">
-            <input type="text" placeholder="Buscar ubicación">
-            <div class="dot"></div>
+            <input type="text" placeholder="Buscar ubicación" id="city">
+             <button class="dot"></button>
         </div>
 
         <div class="content-grid">
@@ -21,14 +21,25 @@
 
                 <div class="temp-section">
                     <div class="icon">ICONO</div>
-                    <div class="temperature">TEMPERATURA °C</div>
+                    <div class="temperature">
+                        <p id="tempera"></p>
+                    </div>
                 </div>
 
-                <div class="weather-conditions">
-                    <div class="condition">Hum</div>
-                    <div class="condition">Pre</div>
-                    <div class="condition">Vel</div>
-                    <div class="condition">Cal</div>
+                <div class="weather-conditions" >
+                    <div class="condition" >
+                        <p id="humi"></p>
+                    </div>
+                    <div class="condition">
+                        <p id="prec"></p>
+                    </div>
+                    
+                    <div class="condition">
+                        <p id="velo"></p>
+                    </div>
+                    <div class="condition">
+                        <p id="calid"></p>
+                    </div>
                 </div>
             </div>
 
@@ -53,4 +64,5 @@
         </div>
     </div>
 </body>
+<script src="main.js"></script>
 </html>
