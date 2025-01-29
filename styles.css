@@ -390,3 +390,98 @@ body {
   opacity: 1;
   transform: scaleY(1);
 }
+
+/************************************ abajo *************************************/
+/* Pronóstico */
+.pronostico-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.pronostico-dia {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pronostico-dia.grande {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #e3e3e3;
+}
+
+.info-clima {
+  /*display: flex;
+  justify-content: space-around;
+  margin-top: 8px;*/
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.dato {
+  background: #ddd;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Fase Lunar */
+.fase-lunar-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.fase-lunar {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Radar */
+.mapa-radar {
+  background: #dfe4ea;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.fecha-hora {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Recomendaciones */
+.recomendaciones-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.mensaje {
+  background: #f8c471;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.imagen {
+  background: #aed6f1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.recomendaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.recomendaciones div {
+  background: #f5b7b1;
+  padding: 8px;
+  border-radius: 5px;
+}
