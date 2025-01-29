@@ -169,14 +169,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #3f606a;
   padding: 20px;
 }
 
 /* Tarjeta principal */
 .card {
-  background-color: white;
+  background-color: rgb(192, 224, 222);
   border-radius: 25px;
   padding: 20px;
   width: 100%;
@@ -197,6 +198,12 @@ body {
   border-radius: 20px;
   background-color: #f0f0f0;
   font-size: 16px;
+}
+
+.icon {
+  font-size: 100px; /* Tamaño del ícono */
+  display: inline-block;
+  line-height: 1; /* Asegúrate de que el ícono esté bien centrado */
 }
 
 .search-bar button {
@@ -300,7 +307,7 @@ body {
 }
 
 /* Navegación inferior */
-.bottom-nav {
+/*.bottom-nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
@@ -313,7 +320,7 @@ body {
   text-align: center;
   font-size: 14px;
   cursor: pointer;
-}
+}*/
 
 /* Responsividad */
 @media (max-width: 768px) {
@@ -330,4 +337,56 @@ body {
   .bottom-nav {
       grid-template-columns: 1fr;
   }
+}
+
+
+/*botones*/
+/* Contenedor de los botones */
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Botones */
+.toggle-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #4b5c6d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Contenedor de las secciones */
+.emergent-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  min-height: 150px; /* Altura fija para mantener todo alineado */
+}
+
+/* Sección emergente */
+.emergent-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mostrar sección emergente */
+.emergent-section.visible {
+  opacity: 1;
+  transform: scaleY(1);
 }

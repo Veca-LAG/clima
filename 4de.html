@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secciones Emergentes Horizontales</title>
+  <style>
+    /* Estilos básicos */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    /* Contenedor de los botones */
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Botones */
+    .toggle-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Contenedor de las secciones */
+    .emergent-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      min-height: 150px; /* Altura fija para mantener todo alineado */
+    }
+
+    /* Sección emergente */
+    .emergent-section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Mostrar sección emergente */
+    .emergent-section.visible {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Botones en forma horizontal -->
+  <div class="buttons-container">
+    <button class="toggle-btn" data-target="section1">Sección 1</button>
+    <button class="toggle-btn" data-target="section2">Sección 2</button>
+    <button class="toggle-btn" data-target="section3">Sección 3</button>
+    <button class="toggle-btn" data-target="section4">Sección 4</button>
+  </div>
+
+  <!-- Contenedor de secciones emergentes -->
+  <div class="emergent-container">
+    <!-- Sección 1 -->
+    <div class="emergent-section" id="section1">
+      <h2>Sección 1</h2>
+      <p>Contenido de la sección 1.</p>
+    </div>
+    <!-- Sección 2 -->
+    <div class="emergent-section" id="section2">
+      <h2>Sección 2</h2>
+      <p>Contenido de la sección 2.</p>
+    </div>
+    <!-- Sección 3 -->
+    <div class="emergent-section" id="section3">
+      <h2>Sección 3</h2>
+      <p>Contenido de la sección 3.</p>
+    </div>
+    <!-- Sección 4 -->
+    <div class="emergent-section" id="section4">
+      <h2>Sección 4</h2>
+      <p>Contenido de la sección 4.</p>
+    </div>
+  </div>
+
+  <script>
+    // Seleccionar todos los botones y secciones
+    const buttons = document.querySelectorAll('.toggle-btn');
+    const sections = document.querySelectorAll('.emergent-section');
+
+    // Añadir evento de clic a cada botón
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target'); // Obtener el ID de la sección asociada
+        const targetSection = document.getElementById(targetId); // Seleccionar la sección correspondiente
+
+        // Ocultar todas las secciones
+        sections.forEach(section => {
+          if (section !== targetSection) {
+            section.classList.remove('visible');
+          }
+        });
+
+        // Alternar la visibilidad de la sección seleccionada
+        targetSection.classList.toggle('visible');
+      });
+    });
+  </script>
+</body>
+</html>

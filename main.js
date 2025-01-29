@@ -21,7 +21,7 @@ const timeElement = document.getElementById('time');
 Esta es la clave necesaria para hacer peticiones a la API de OpenWeatherMap.
 */
 // API key y URL base
-const apiKey = 'ed46f19ea192bad68ab0c13c479fe460';
+const apiKey = 'ad8cbc4362b9d57c1dd95744657065e9';
 
 // Función para obtener datos del clima
 // Es async porque hace peticiones a una API
@@ -158,6 +158,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await getWeatherData('Oaxaca');
     updateUI(data);
 });
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++*/
+// Seleccionar todos los botones y secciones
+const buttons = document.querySelectorAll('.toggle-btn');
+const sections = document.querySelectorAll('.emergent-section');
+
+// Añadir evento de clic a cada botón
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.getAttribute('data-target'); // Obtener el ID de la sección asociada
+    const targetSection = document.getElementById(targetId); // Seleccionar la sección correspondiente
+
+    // Ocultar todas las secciones
+    sections.forEach(section => {
+      if (section !== targetSection) {
+        section.classList.remove('visible');
+      }
+    });
+
+    // Alternar la visibilidad de la sección seleccionada
+    targetSection.classList.toggle('visible');
+  });
+}); 
+
+
 
 /*
 
