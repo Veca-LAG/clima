@@ -525,7 +525,7 @@ body {
 }
 
 /* Contenedor de la fecha y hora en la esquina superior derecha con más espacio */
-.fecha-hora {
+.fecha-hora-mapa {
   position: absolute;
   top: 15px;
   right: 15px;
