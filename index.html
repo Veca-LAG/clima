@@ -33,14 +33,14 @@
                     <span id="date">FECHA</span>
                     <span id="time">HORA</span>
                 </div>
-                <div class="illustration">IMAGEN ILUSTRATIVA</div>
+                <div class="illustration"></div>
             </div>
         </div>
         <div class="buttons-container">
-            <button class="toggle-btn" data-target="pronostico">Sección 1</button>
-            <button class="toggle-btn" data-target="faseLunar">Sección 2</button>
-            <button class="toggle-btn" data-target="radar">Sección 3</button>
-            <button class="toggle-btn" data-target="recomenda">Sección 4</button>
+            <button class="toggle-btn" data-target="pronostico">Pronostico</button>
+            <button class="toggle-btn" data-target="faseLunar">Fase lunar</button>
+            <button class="toggle-btn" data-target="radar">Radar</button>
+            <button class="toggle-btn" data-target="recomenda">Recomendacion</button>
         </div>
     </div>
     <div class="emergent-container">
@@ -48,50 +48,40 @@
         <div class="emergent-section" id="pronostico">
             <div class="pronostico-section">
                 <!-- Pronóstico de los próximos días -->
-                <div class="pronostico-dia grande">
+                <div class="pronostico-dia-grande">
                     <h3>Pronóstico 1</h3>
                     <div class="info-clima">
-                        <div class="dato" id="Pronostico1humidity">Hum</div>
-                        <div class="dato" id="Pronostico1precipitation">Pre</div>
-                        <div class="dato" id="Pronostico1windSpeed">Vel</div>
-                        <div class="dato" id="Pronostico1airQuality">Cal</div>
+                        <div class="dato" id="Pronostico1temperature">TEMPERATURA °C</div>
+                        <div class="icon" id="Pronostico1weatherIcon">ICONO</div>
                     </div>
                 </div>
                 <!-- Pronósticos restantes -->
                 <div class="pronostico-dia">
                     <h3>Pronóstico 2</h3>
                     <div class="info-clima">
-                        <div class="dato" id="Pronostico2humidity">Hum</div>
-                        <div class="dato" id="Pronostico2precipitation">Pre</div>
-                        <div class="dato" id="Pronostico2windSpeed">Vel</div>
-                        <div class="dato" id="Pronostico2airQuality">Cal</div>
+                        <div class="dato" id="Pronostico2temperature">TEMPERATURA °C</div>
+                        <div class="icon" id="Pronostico2weatherIcon">ICONO</div>
                     </div>
                 </div>
                 <div class="pronostico-dia">
                     <h3>Pronóstico 3</h3>
                     <div class="info-clima">
-                        <div class="dato" id="Pronostico3humidity">Hum</div>
-                        <div class="dato" id="Pronostico3precipitation">Pre</div>
-                        <div class="dato" id="Pronostico3windSpeed">Vel</div>
-                        <div class="dato" id="Pronostico3airQuality">Cal</div>
+                        <div class="dato" id="Pronostico3temperature">TEMPERATURA °C</div>
+                        <div class="icon" id="Pronostico3weatherIcon">ICONO</div>
                     </div>
                 </div>
                 <div class="pronostico-dia">
                     <h3>Pronóstico 4</h3>
                     <div class="info-clima">
-                        <div class="dato" id="Pronostico4humidity">Hum</div>
-                        <div class="dato" id="Pronostico4precipitation">Pre</div>
-                        <div class="dato" id="Pronostico4windSpeed">Vel</div>
-                        <div class="dato" id="Pronostico4airQuality">Cal</div>
+                        <div class="dato" id="Pronostico4temperature">TEMPERATURA °C</div>
+                        <div class="icon" id="Pronostico4weatherIcon">ICONO</div>
                     </div>
                 </div>
                 <div class="pronostico-dia">
                     <h3>Pronóstico 5</h3>
                     <div class="info-clima">
-                        <div class="dato" id="Pronostico5humidity">Hum</div>
-                        <div class="dato" id="Pronostico5precipitation">Pre</div>
-                        <div class="dato" id="Pronostico5windSpeed">Vel</div>
-                        <div class="dato" id="Pronostico5airQuality">Cal</div>
+                        <div class="dato" id="Pronostico5temperature">TEMPERATURA °C</div>
+                        <div class="icon" id="Pronostico5weatherIcon">ICONO</div>
                     </div>
                 </div>
             </div>
@@ -101,14 +91,19 @@
         <div class="emergent-section" id="faseLunar">
             <div class="fase-lunar-container">
                 <div class="fase-lunar">
-                    <div class="etapa">Etapa</div>
-                    <div class="foto">Foto</div>
-                    <div class="info">Información</div>
+                    <div class="etapaFondo">
+                        <div class="etapa" id="etapaFaseLunar">Etapa</div>
+                        <div class="icon" id="fotoFaseLunar">Foto</div>
+                    </div>
+                    <div class="info" id="informacionFaseLunar">Información</div>
                 </div>
+                <div class="proximoFlecha">></div>
                 <div class="fase-lunar">
-                    <div class="etapa">Etapa</div>
-                    <div class="foto">Foto</div>
-                    <div class="info">Próxima luna llena</div>
+                    <div class="etapaFondo">
+                        <div class="etapa" id="etapaFaseLunarProximo">Etapa</div>
+                        <div class="icon" id="fotoFaseLunarProximo">Foto</div>
+                    </div>
+                    <div class="info" id="ProximaLunaLlena">Próxima luna llena</div>
                 </div>
             </div>
         </div>

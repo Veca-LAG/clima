@@ -17,6 +17,30 @@ const dayElement = document.getElementById('day');
 const dateElement = document.getElementById('date');
 const timeElement = document.getElementById('time');
 
+// Clave de la API de Unsplash
+const unsplashApiKey = 'Ob9RsrjNi9uTe5usIThXR392zDmdUTWfVMfq8l9cNdE'; // Reemplaza con tu propia clave
+
+// Función para obtener una imagen de Unsplash en base a la ciudad
+async function getCityImage(city) {
+    try {
+        const response = await fetch(`https://api.unsplash.com/search/photos?query=${city}&client_id=${unsplashApiKey}&per_page=1`);
+        const data = await response.json();
+
+        if (data.results.length > 0) {
+            // Si encontramos una imagen, devolver la URL
+            return data.results[0].urls.regular;
+        } else {
+            // Si no se encuentra una imagen, devolver una predeterminada
+            return 'https://via.placeholder.com/800x400?text=Imagen+no+disponible';
+        }
+    } catch (error) {
+        console.error('Error obteniendo imagen:', error);
+        return 'https://via.placeholder.com/800x400?text=Imagen+no+disponible'; // Imagen de fallback
+    }
+}
+
+
+
 /*
 Esta es la clave necesaria para hacer peticiones a la API de OpenWeatherMap.
 */
@@ -82,7 +106,7 @@ function updateWeatherIcon(weatherCode) {
 }
 
 // Función para actualizar la interfaz
-function updateUI(data) {
+async function updateUI(data) {
     if (!data) return;
 
     const { weather, airQuality } = data;
@@ -110,6 +134,17 @@ function updateUI(data) {
     const aqiIndex = airQuality.list[0].main.aqi;
     const aqiText = ['Buena', 'Regular', 'Moderada', 'Mala', 'Muy mala'][aqiIndex - 1];
     airQualityElement.textContent = `Calidad: ${aqiText}`;
+
+     // Obtener la imagen de la ciudad desde Unsplash
+     const cityImageUrl = await getCityImage(weather.name);
+     const illustrationElement = document.querySelector('.illustration');
+ 
+     // Establecer la imagen de fondo de la ciudad
+     illustrationElement.style.backgroundImage = `url(${cityImageUrl})`;
+     illustrationElement.style.backgroundSize = 'cover';
+     illustrationElement.style.backgroundPosition = 'center';
+     illustrationElement.style.height = '200px'; // Ajusta la altura según sea necesario
+ 
 
     // Actualizar fecha y hora
     updateDateTime();
